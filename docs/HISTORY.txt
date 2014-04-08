@@ -4,6 +4,8 @@ Changelog
 3.0.6 - unreleased
 ------------------
 
+- Don't try to decode textual content when no encoding could be determined.
+  [witsch]
 
 3.0.5 - July 11, 2013
 ---------------------

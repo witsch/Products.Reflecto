@@ -161,7 +161,9 @@ class ReflectoFile(BaseMove, Resource, BaseProxy, DynamicType):
         elif self.Format().startswith("text/"):
             data = self.get_data()
             encoding = chardet.detect(data)["encoding"]
-            result += ' ' + data.decode(encoding, 'ignore').encode('utf8')
+            if encoding is not None:
+                data = data.decode(encoding, 'ignore')
+            result += ' ' + data.encode('utf8')
 
         return result
     
